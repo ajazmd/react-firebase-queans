@@ -1,0 +1,32 @@
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+  .custom-alert {
+    background-color: #ffebee; /* Light red background */
+    border: 1px solid #ffcdd2; /* Light red border */
+    color: #c62828; /* Dark red text */
+    border-radius: 8px; /* Rounded corners */
+    padding: 12px; /* Add padding */
+    margin-top: 1rem; /* Add margin */
+    font-size: 14px;
+    font-weight: bold; /* Adjust font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    text-align: center; /* Center-align text */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap; /* Allow text to wrap */
+    word-break: break-word; /* Break long words */
+   
+  }
+  

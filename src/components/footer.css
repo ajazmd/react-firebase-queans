@@ -1,0 +1,14 @@
+/* Footer.css */
+.footer {
+ /* Semi-transparent dark background */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Push footer to the bottom */
+    position: relative;
+    z-index: 1; /* Ensure footer is above other content */
+  }
+  
+  /* Ensure the body and root take full height */
+  html, body, #root {
+    height: 100%;
+  }
