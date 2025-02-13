@@ -1,0 +1,31 @@
+name: Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch (e.g., master, main)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Replace with your Node.js version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to Firebase
+        uses: google-github-actions/deploy-cloud-functions@v1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          credentials: ${{ secrets.GCP_SA_KEY }}
