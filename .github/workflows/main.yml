@@ -27,12 +27,12 @@ jobs:
       - name: Authenticate with Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: ${{ secrets.GCP_SA_KEY }}  # Ensure this secret is correctly set
 
       - name: Deploy to Firebase Cloud Functions
         uses: google-github-actions/deploy-cloud-functions@v2
         with:
-          name: questionanswerapp-6aaf7
+          name: questionanswerapp-6aaf7  # Replace with your Cloud Function name
           runtime: nodejs18
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}  # Ensure this secret is correctly set
           region: us-central1  # Change if using a different region
