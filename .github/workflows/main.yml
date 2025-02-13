@@ -28,5 +28,6 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@v1
         with:
           name: questionanswerapp-6aaf7
+          runtime: nodejs18
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           credentials: ${{ secrets.GCP_SA_KEY }}
