@@ -29,10 +29,15 @@ jobs:
           echo "Project ID: ${{ secrets.GCP_PROJECT_ID }}"
           echo "Credentials: ${{ secrets.GCP_SA_KEY }}"
 
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}  # Use the JSON key for authentication
+
       - name: Deploy to Firebase
         uses: google-github-actions/deploy-cloud-functions@v1
         with:
-          name: QuestionAnswerApp
-          runtime: nodejs18
-          project_id: "${{ secrets.GCP_PROJECT_ID }}"
-          credentials: "${{ secrets.GCP_SA_KEY }}"
+          name: QuestionAnswerApp  # Replace with your Cloud Function name
+          runtime: nodejs18  # Replace with your runtime (e.g., nodejs16, nodejs18)
+          project_id: ${{ secrets.GCP_PROJECT_ID }}  # Use the project ID secret
+          region: us-central1  # Replace with your region (e.g., us-central1)
