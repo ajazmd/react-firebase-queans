@@ -24,20 +24,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Debug Secrets  # Debug step to check if the secret is loading correctly
-        run: |
-          echo "Project ID: ${{ secrets.GCP_PROJECT_ID }}"
-          echo "Credentials: ${{ secrets.GCP_SA_KEY }}"
-
-      - name: Authenticate with Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}  # Use the JSON key for authentication
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
 
       - name: Deploy to Firebase
-        uses: google-github-actions/deploy-cloud-functions@v1
-        with:
-          name: QuestionAnswerApp  # Replace with your Cloud Function name
-          runtime: nodejs18  # Replace with your runtime (e.g., nodejs16, nodejs18)
-          project_id: ${{ secrets.GCP_PROJECT_ID }}  # Use the project ID secret
-          region: us-central1  # Replace with your region (e.g., us-central1)
+        run: firebase deploy --only functions --token ${{ secrets.FIREBASE_TOKEN }}
