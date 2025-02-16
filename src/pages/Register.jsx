@@ -110,7 +110,7 @@ const Register = () => {
           placeholder="Enter password"
         />
       </Form.Group>
-      <Button variant="primary" onClick={handleRegister} className="w-100 mt-3">
+      <Button variant="primary" onClick={handleRegister} size="sm" className="w-100 mt-4">
         REGISTER
       </Button>
       <p className="text-center mt-3">

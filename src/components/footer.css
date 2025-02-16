@@ -6,6 +6,7 @@
     margin-top: auto; /* Push footer to the bottom */
     position: relative;
     z-index: 1; /* Ensure footer is above other content */
+    background:#f8f9fa;
   }
   
   /* Ensure the body and root take full height */

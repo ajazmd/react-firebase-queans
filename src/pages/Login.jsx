@@ -113,18 +113,19 @@ const Login = ({user}) => {
           placeholder="Enter password"
         />
       </Form.Group>
-      <Button variant="primary" onClick={handleLogin} className="w-100 mt-3">
+      <Button variant="primary" onClick={handleLogin} size="sm" className="w-100 mt-3">
         LOG IN
       </Button>
-      <p className="text-center fw-bold mt-3 mb-0">OR</p>
+      <p className="text-center fw-bold mt-1 mb-0">OR</p>
       <Button
         variant="danger"
         onClick={signInWithGoogle}
-        className="w-100 mt-3"
+        className="w-100 mt-1"
+        size="sm"
       >
         Sign In with Google
       </Button>
-      <p className="text-center mt-3">
+      <p className="text-center mt-2">
         Don't have an account? <Link to="/register">Register</Link>
       </p>
       </>
